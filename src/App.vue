@@ -8,6 +8,7 @@ const WorkSection = defineAsyncComponent(() => import('./components/WorkSection.
 const AboutSection = defineAsyncComponent(() => import('./components/AboutSection.vue'))
 const ContactSection = defineAsyncComponent(() => import('./components/ContactSection.vue'))
 const SiteFooter = defineAsyncComponent(() => import('./components/SiteFooter.vue'))
+const ScrollToTop = defineAsyncComponent(() => import('./components/ScrollToTop.vue'))
 
 export default {
   name: 'App',
@@ -18,7 +19,8 @@ export default {
     AboutSection,
     ContactSection,
     SiteFooter,
-    CustomCursor
+    CustomCursor,
+    ScrollToTop
   }
 }
 </script>
@@ -34,5 +36,6 @@ export default {
     </main>
     <SiteFooter />
     <CustomCursor />
+    <ScrollToTop />
   </div>
 </template>
