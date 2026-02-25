@@ -73,7 +73,7 @@ export default {
       // Load font and build text geometry
       const loader = new FontLoader()
       loader.load(
-        'https://threejs.org/examples/fonts/helvetiker_bold.typeface.json',
+        '/helvetiker_bold.typeface.json',
         (font) => {
           const geo = new TextGeometry('EH', {
             font,
