@@ -4,14 +4,24 @@ import { ref, onMounted, onUnmounted } from 'vue'
 export default {
   name: 'CustomCursor',
   setup() {
-    const x = ref(0)
-    const y = ref(0)
     const isHovering = ref(false)
     const isVisible = ref(false)
+    const cursorRef = ref(null)
+    
+    let rafId = null
+    let mouseX = 0
+    let mouseY = 0
+
+    const moveCursor = () => {
+      if (cursorRef.value) {
+        cursorRef.value.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`
+      }
+      rafId = requestAnimationFrame(moveCursor)
+    }
 
     const updateCursor = (e) => {
-      x.value = e.clientX
-      y.value = e.clientY
+      mouseX = e.clientX
+      mouseY = e.clientY
       if (!isVisible.value) isVisible.value = true
     }
 
@@ -32,27 +42,29 @@ export default {
     }
 
     onMounted(() => {
-      window.addEventListener('mousemove', updateCursor)
-      window.addEventListener('mouseover', handleMouseOver)
-      window.addEventListener('mouseout', handleMouseOut)
+      window.addEventListener('mousemove', updateCursor, { passive: true })
+      window.addEventListener('mouseover', handleMouseOver, { passive: true })
+      window.addEventListener('mouseout', handleMouseOut, { passive: true })
+      rafId = requestAnimationFrame(moveCursor)
     })
 
     onUnmounted(() => {
       window.removeEventListener('mousemove', updateCursor)
       window.removeEventListener('mouseover', handleMouseOver)
       window.removeEventListener('mouseout', handleMouseOut)
+      if (rafId) cancelAnimationFrame(rafId)
     })
 
-    return { x, y, isHovering, isVisible }
+    return { cursorRef, isHovering, isVisible }
   }
 }
 </script>
 
 <template>
   <div 
+    ref="cursorRef"
     class="custom-cursor"
     :class="{ 'is-hovering': isHovering, 'is-visible': isVisible }"
-    :style="{ transform: `translate3d(${x}px, ${y}px, 0)` }"
   >
     <div class="cursor-inner"></div>
   </div>

@@ -1,5 +1,7 @@
 <script>
-import HeroModel from './HeroModel.vue'
+import { defineAsyncComponent } from 'vue'
+
+const HeroModel = defineAsyncComponent(() => import('./HeroModel.vue'))
 
 export default {
   name: 'HeroSection',

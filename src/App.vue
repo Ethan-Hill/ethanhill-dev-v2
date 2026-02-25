@@ -1,11 +1,13 @@
 <script>
+import { defineAsyncComponent } from 'vue'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
-import WorkSection from './components/WorkSection.vue'
-import AboutSection from './components/AboutSection.vue'
-import ContactSection from './components/ContactSection.vue'
-import SiteFooter from './components/SiteFooter.vue'
 import CustomCursor from './components/CustomCursor.vue'
+
+const WorkSection = defineAsyncComponent(() => import('./components/WorkSection.vue'))
+const AboutSection = defineAsyncComponent(() => import('./components/AboutSection.vue'))
+const ContactSection = defineAsyncComponent(() => import('./components/ContactSection.vue'))
+const SiteFooter = defineAsyncComponent(() => import('./components/SiteFooter.vue'))
 
 export default {
   name: 'App',
