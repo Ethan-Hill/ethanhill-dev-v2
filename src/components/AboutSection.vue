@@ -1,4 +1,19 @@
 <script>
+function getDuration(startYear, startMonth) {
+  const now = new Date()
+  const start = new Date(startYear, startMonth - 1, 1)
+  let years = now.getFullYear() - start.getFullYear()
+  let months = now.getMonth() - start.getMonth()
+  if (months < 0) {
+    years--
+    months += 12
+  }
+  const parts = []
+  if (years > 0) parts.push(`${years} yr${years !== 1 ? 's' : ''}`)
+  if (months > 0) parts.push(`${months} mo${months !== 1 ? 's' : ''}`)
+  return parts.join(' ') + ' · Current'
+}
+
 export default {
   name: 'AboutSection',
   data() {
@@ -27,7 +42,7 @@ export default {
         },
         {
           period: 'Work',
-          dates: '2 yrs 8 mos · Current',
+          dates: getDuration(2023, 6),
           place: 'One Utility Bill',
           detail: 'Working as a Full Stack Developer using Vue.js and Laravel in a hybrid environment. Building and maintaining web applications while collaborating with teams in Newcastle Upon Tyne.'
         },

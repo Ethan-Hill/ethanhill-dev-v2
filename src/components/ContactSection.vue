@@ -24,16 +24,6 @@ export default {
          If you have something interesting, I'd love to hear about it.
         </p>
 
-        <a
-          href="mailto:hello@ethanhill.dev"
-          class="inline-flex items-center gap-3 text-sm text-[#e8e8e8] border border-[#1f1f1f] px-6 py-3 hover:border-[#c8f542] hover:text-[#c8f542] transition-all duration-300 group mb-16"
-        >
-          hello@ethanhill.dev
-          <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-
         <div class="flex items-center gap-6">
           <!-- GitHub -->
           <a href="https://github.com/ethanhill" class="text-[#4a4a4a] hover:text-[#c8f542] transition-colors duration-300" target="_blank" rel="noopener" aria-label="GitHub">
