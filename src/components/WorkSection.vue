@@ -58,7 +58,7 @@ export default {
       <article
         v-for="(project, index) in projects"
         :key="project.id"
-        class="group py-8 grid grid-cols-12 gap-4 items-start hover:bg-[#111111] transition-colors duration-300 -mx-4 px-4 cursor-default"
+        class="group py-8 grid grid-cols-12 gap-4 items-start hover:bg-[#111111] transition-colors duration-300 -mx-4 px-4"
       >
         <!-- Index -->
         <span class="col-span-1 text-xs text-[#8a8a8a] tabular-nums pt-1">{{ String(index + 1).padStart(2, '0') }}</span>

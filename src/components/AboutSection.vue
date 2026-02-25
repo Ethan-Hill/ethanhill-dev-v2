@@ -80,7 +80,7 @@ export default {
               <span
                 v-for="skill in skills"
                 :key="skill"
-                class="text-xs text-[#888888] border border-[#1f1f1f] px-3 py-1.5 hover:border-[#c8f542] hover:text-[#c8f542] transition-all duration-300 cursor-default"
+                class="text-xs text-[#888888] border border-[#1f1f1f] px-3 py-1.5 hover:border-[#c8f542] hover:text-[#c8f542] transition-all duration-300"
               >
                 {{ skill }}
               </span>

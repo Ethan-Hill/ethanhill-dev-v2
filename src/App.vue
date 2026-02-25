@@ -5,6 +5,7 @@ import WorkSection from './components/WorkSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
+import CustomCursor from './components/CustomCursor.vue'
 
 export default {
   name: 'App',
@@ -14,7 +15,8 @@ export default {
     WorkSection,
     AboutSection,
     ContactSection,
-    SiteFooter
+    SiteFooter,
+    CustomCursor
   }
 }
 </script>
@@ -29,5 +31,6 @@ export default {
       <ContactSection />
     </main>
     <SiteFooter />
+    <CustomCursor />
   </div>
 </template>
