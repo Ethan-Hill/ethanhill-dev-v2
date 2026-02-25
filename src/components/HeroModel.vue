@@ -35,7 +35,6 @@ export default {
 
       // Scene
       this.scene = new THREE.Scene()
-      this.clock = new THREE.Clock()
 
       // Camera
       this.camera = new THREE.PerspectiveCamera(42, w / h, 0.1, 100)
@@ -131,7 +130,7 @@ export default {
 
     animate() {
       this.animFrame = requestAnimationFrame(this.animate)
-      const t = this.clock.getElapsedTime()
+      const t = performance.now() * 0.001
 
       // Smooth lerp toward real mouse position
       const speed = 0.055
