@@ -5,6 +5,14 @@ export default {
     return {
       projects: [
         {
+          id: 5,
+          title: 'JibberJab',
+          year: '2026',
+          tags: ['Laravel', 'Vue 3', 'Vite', 'Pusher', 'TailwindCSS'],
+          description: 'A modern, real-time social platform (Twitter clone) featuring real-time messaging, dynamic feeds, and a sleek, responsive interface.',
+          repo: 'https://github.com/Ethan-Hill/JibberJab',
+        },
+        {
           id: 4,
           title: 'ethanhill.dev (v2)',
           year: '2026',
